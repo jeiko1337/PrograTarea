@@ -20,16 +20,11 @@ public class Tarea4 {
 
         int cliente = 0;
         String cambio = "";
-        double dolar = 21.33, euro = 24.85, yenes = 0.20, cantidad, conversion = 0, ganancia = 0;
-        double conversion2 = 0, conversion3 = 0, ganancia2 = 0, ganancia3 = 0;
+        double dolar = 21.33, euro = 24.85, yenes = 0.20, cantidad, ganancia = 0;
+        double ganancia2 = 0, ganancia3 = 0;
 
         while (!cambio.equals("S")) {
             cliente++; //Acumulador de clientes atendidos
-            
-            //Acumulador de ganancias totales de cada moneda al final del programa
-            ganancia += conversion;
-            ganancia2 += conversion2;
-            ganancia3 += conversion3;
 
             System.out.println("\n**********************************************************************");
             System.out.println("Ingrese el digito del tipo de cambio que desea hacer: ");
@@ -46,7 +41,8 @@ public class Tarea4 {
                     System.out.println("\nEl cambio en dolares es de $" + dolar);
                     System.out.println("Ingrese la cantidad de dolares a convertir:");
                     cantidad = sc.nextDouble();
-                    conversion = cantidad * dolar;
+                    double conversion = cantidad * dolar;
+                    ganancia += conversion;
                     System.out.println("su conversion fue de $" + df.format(conversion) + " pesos\n");
                     System.out.println("**********************************************************************");
                     break;
@@ -55,7 +51,8 @@ public class Tarea4 {
                     System.out.println("\nEL cambio en euros es de $" + euro);
                     System.out.println("Ingrese la cantidad en euros a convertir:");
                     cantidad = sc.nextDouble();
-                    conversion2 = cantidad * euro;
+                    double conversion2 = cantidad * euro;
+                    ganancia2 += conversion2;
                     System.out.println("su conversion fue de $" + df.format(conversion2) + " pesos\n");
                     System.out.println("**********************************************************************");
                     break;
@@ -64,7 +61,8 @@ public class Tarea4 {
                     System.out.println("\nEl cambio en yenes es de $" + yenes);
                     System.out.println("Ingrese la cantidad en yenes a convertir:");
                     cantidad = sc.nextDouble();
-                    conversion3 = cantidad * yenes;
+                    double conversion3 = cantidad * yenes;
+                    ganancia3 += conversion3;
                     System.out.println("su conversion fue de $" + df.format(conversion3) + " pesos\n");
                     System.out.println("**********************************************************************");
                     break;
